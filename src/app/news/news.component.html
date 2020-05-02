@@ -1,0 +1,11 @@
+<body>
+    <button class="btn btn-primary btn-dark" (click)="addNews()">Add News</button>
+    <div class="card" *ngFor="let news of allNews">
+        <h3 class="card-header bg-danger text-white">{{news.title}}</h3>
+        <div class="card-body">
+            <h4 class="card-title">{{news.description}}</h4>
+            <h5 class="card-text font-italic">{{news.summary}}</h5>
+            <p class="card-text text-justify">{{news.content}}</p>
+        </div>
+    </div>
+</body>

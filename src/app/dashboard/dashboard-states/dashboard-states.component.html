@@ -1,0 +1,22 @@
+<body>
+    <table class="table">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">Districts</th>
+                <th scope="col">Total Cases</th>
+                <th scope="col">Active</th>
+                <th scope="col" class="text-success">Recovered</th>
+                <th scope="col" class="text-danger">Deceased</th>
+            </tr>
+        </thead>
+        <tbody *ngIf="currentState">
+            <tr *ngFor="let district of currentState.districtData">
+                <th scope="row">{{district.name}}</th>
+                <td>{{district.data.confirmed}}</td>
+                <td>{{district.data.active}}</td>
+                <td>{{district.data.recovered}}</td>
+                <td>{{district.data.deceased}}</td>
+            </tr>
+        </tbody>
+    </table>
+</body>

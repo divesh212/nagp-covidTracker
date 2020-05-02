@@ -1,0 +1,24 @@
+<body>
+    <table class="table">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">States</th>
+                <th scope="col">Total Cases</th>
+                <th scope="col">Active</th>
+                <th scope="col" class="text-success">Recovered</th>
+                <th scope="col" class="text-danger">Deceased</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of covidDataList | slice:1">
+                <th scope="row">
+                    <a class='nav-link' [routerLink]="['/dashboard', data.statecode]">{{data.state}}</a>
+                </th>
+                <td>{{data.confirmed}}</td>
+                <td>{{data.active}}</td>
+                <td>{{data.recovered}}</td>
+                <td>{{data.deaths}}</td>
+            </tr>
+        </tbody>
+    </table>
+</body>

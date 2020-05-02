@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="card news-form-card">
+        <div class="card-header">
+            <h2>Add News</h2>
+        </div>
+        <div class="card-body">
+
+            <form [formGroup]="addNewsForm" (ngSubmit)="onSubmit(addNewsForm.value)">
+
+                <div class="form-group">
+                    <input type="text" formControlName="title" placeholder="Title" class="form-control"
+                        [ngClass]="{ 'is-invalid': addNewsForm.controls.title.touched && addNewsForm.controls.title.errors }" />
+                    <div class="invalid-feedback"
+                        *ngIf="addNewsForm.get('title').invalid && addNewsForm.get('title').touched"> Title is
+                        required
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <input type="text" formControlName="description" placeholder="Description" class="form-control"
+                        [ngClass]="{ 'is-invalid': addNewsForm.controls.description.touched && addNewsForm.controls.description.errors }" />
+                    <div class="invalid-feedback"
+                        *ngIf="addNewsForm.get('description').invalid && addNewsForm.get('description').touched">
+                        Description is
+                        required
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <input type="text" formControlName="summary" placeholder="Summary" class="form-control"
+                        [ngClass]="{ 'is-invalid': addNewsForm.controls.summary.touched && addNewsForm.controls.summary.errors }" />
+                    <div class="invalid-feedback"
+                        *ngIf="addNewsForm.get('summary').invalid && addNewsForm.get('summary').touched"> Summary is
+                        required
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <input type="text" formControlName="content" placeholder="Content" class="form-control"
+                        [ngClass]="{ 'is-invalid': addNewsForm.controls.content.touched && addNewsForm.controls.content.errors }" />
+                    <div class="invalid-feedback"
+                        *ngIf="addNewsForm.get('content').invalid && addNewsForm.get('content').touched"> Content is
+                        required.
+                    </div>
+                </div>
+                <button [disabled]="!addNewsForm.valid" class="btn btn-primary btn-dark">Add</button>
+                <a class="btn btn-link text-black-50" routerLink="/news">Back</a>
+            </form>
+        </div>
+    </div>
+</div>
